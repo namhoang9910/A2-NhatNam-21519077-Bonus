@@ -32,7 +32,6 @@ function NewPhone(props) {
 	return (
         <form onSubmit={createPhone} onClick={(e) => e.stopPropagation()} className='new-phone'>
             <select onChange={(e) => setName(e.target.value)} value={name}>
-                <option value='' disabled>Select Phone Type</option>
                 <option value='Home'>Home</option>
                 <option value='Work'>Work</option>
                 <option value='Mobile'>Mobile</option>
