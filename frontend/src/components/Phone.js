@@ -21,7 +21,7 @@ function Phone(props) {
                 {
                     width: '14px',
                 }
-            }><button className="button red" onClick={deletePhone}>Delete</button></td>
+            }><button className="button red" onClick={deletePhone}>Delete Phone</button></td>
         </tr>
 	);
 }
