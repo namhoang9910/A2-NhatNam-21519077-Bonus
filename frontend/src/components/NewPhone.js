@@ -3,7 +3,7 @@ import { useState } from 'react';
 function NewPhone(props) {
     const {contact, phones, setPhones} = props;
     const [number, setNumber] = useState('');
-    const [name, setName] = useState('');
+    const [name, setName] = useState('Home'); // Initial value for the select
 
     async function createPhone(e) {
         e.preventDefault();
@@ -25,7 +25,7 @@ function NewPhone(props) {
             setPhones([...phones, data]);
         }
 
-        setName('');
+        setName('Home'); // Initial value for the select
         setNumber('');
     }
 
