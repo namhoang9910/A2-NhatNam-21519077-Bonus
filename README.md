@@ -7,7 +7,6 @@ Please include your shared repository link here:
 NHAT NAM HOANG (21519077)'S REPOSITORY:
 https://github.com/namhoang9910/A2-NhatNam-21519077.git 
 
-
 ## Access Database
 1 **Plsql Cheat Sheet:**
 You can refer to the PostgreSQL cheat sheet [here](https://www.postgresqltutorial.com/postgresql-cheat-sheet/).
@@ -16,10 +15,11 @@ You can refer to the PostgreSQL cheat sheet [here](https://www.postgresqltutoria
 To find out the container ID, execute the following command:
    ```bash
    docker ps
-    9958a3a534c9   testsystem-nginx           "/docker-entrypoint.…"   6 minutes ago   Up 6 minutes   0.0.0.0:80->80/tcp   testsystem-nginx-1
-    53121618baa4   testsystem-frontend        "docker-entrypoint.s…"   6 minutes ago   Up 6 minutes   3000/tcp             testsystem-frontend-1
-    c89e46ac94b0   testsystem-api             "docker-entrypoint.s…"   6 minutes ago   Up 6 minutes   5000/tcp             testsystem-api-1
-    9f4aea7cf538   postgres:15.3-alpine3.18   "docker-entrypoint.s…"   6 minutes ago   Up 6 minutes   5432/tcp             testsystem-db-1
+      CONTAINER ID   IMAGE                          COMMAND                  CREATED      STATUS          PORTS                NAMES
+      42b57d821b3b   a2-nhatnam-21519077-nginx      "/docker-entrypoint.…"   6 days ago   Up 19 minutes   0.0.0.0:80->80/tcp   a2-nhatnam-21519077-nginx-1
+      9b8fff3011e4   a2-nhatnam-21519077-frontend   "docker-entrypoint.s…"   6 days ago   Up 19 minutes   3000/tcp             a2-nhatnam-21519077-frontend-1
+      5946c5c790b7   a2-nhatnam-21519077-api        "docker-entrypoint.s…"   6 days ago   Up 19 minutes   5000/tcp             a2-nhatnam-21519077-api-1
+      b007ff94e66f   postgres:15.3-alpine3.18       "docker-entrypoint.s…"   6 days ago   Up 19 minutes   5432/tcp             a2-nhatnam-21519077-db-1
    ```
 3. Running the application
 
@@ -32,8 +32,8 @@ To find out the container ID, execute the following command:
 Once you have the container ID, you can execute the container using the following command:
 You will see the example of running the PostgreSQL inside the container.
    ```bash
-   docker exec -it testsystem-db-1 psql -U postgres
-   choiruzain@MacMarichoy TestSystem % docker exec -it testsystem-db-1 psql -U postgres                                       
+   docker exec -it tb007ff94e66f psql -U postgres
+   namhoang9910@Nams-MacBook-21 A2-NhatNam-21519077 % docker exec -it b007ff94e66f psql -U postgres                                       
    psql (15.3)
    Type "help" for help.
    
@@ -46,24 +46,27 @@ You will see the example of running the PostgreSQL inside the container.
    (2 rows)
   
     postgres=# select * from contacts;
-    id |  name  |         createdAt         |         updatedAt         
-   ----+--------+---------------------------+---------------------------
-     1 | Helmut | 2024-08-08 11:57:57.88+00 | 2024-08-08 11:57:57.88+00
-    (1 row)
+   id |    name    |         createdAt          |         updatedAt          
+   ----+------------+----------------------------+----------------------------
+   1 | tony       | 2024-09-18 01:30:50.984+00 | 2024-09-18 01:30:50.984+00
+   4 | Scott Mann | 2024-09-18 01:53:57.967+00 | 2024-09-18 02:01:39.607+00
+    (2 rows)
     postgres=# select * from phones;
-    id | phone_type |   number    | contactId |         createdAt          |         updatedAt          
-   ----+------------+-------------+-----------+----------------------------+----------------------------
-     1 | Work       | 081431      |         1 | 2024-08-08 11:59:04.386+00 | 2024-08-08 11:59:04.386+00
-
+   id |  name  |   number   | contactId |         createdAt          |         updatedAt          
+   ----+--------+------------+-----------+----------------------------+----------------------------
+   1 |        | q2345678   |         1 | 2024-09-18 01:30:54.306+00 | 2024-09-18 01:30:54.306+00
+   2 | Mobile | 23456789   |         1 | 2024-09-18 01:30:58.233+00 | 2024-09-18 01:30:58.233+00
+   4 |        | 23456      |         4 | 2024-09-18 01:54:02.475+00 | 2024-09-18 01:54:02.475+00
+   5 | Mobile | 345678     |         4 | 2024-09-18 01:54:05.912+00 | 2024-09-18 01:54:05.912+00
+   7 | Mobile | 6101119999 |         1 | 2024-09-18 02:08:46.16+00  | 2024-09-18 02:27:05.023+00
 
 postgres=# select * from contacts;
    ```
-Replace `container_ID` with the actual ID of the container you want to execute.
-
 ## Executing API
 
 ### Contact API
 
+Task 1. ![Task 1 Screenshots](images/Task%201.png)
 
 1. Add contacts API  (POST)
 ```bash
@@ -94,7 +97,6 @@ X-Powered-By: Express
 ```bash
 http get http://localhost/api/contacts
 
-
 choiruzain@MacMarichoy-7 TestSystem % http get http://localhost/api/contacts
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: http://localhost:3000
@@ -116,12 +118,10 @@ X-Powered-By: Express
 }
 ]
 
-
 ```
 3. Show/create the API commmand to delete the contacts (DELETE)
 
 ```bash
-
 
 
 
@@ -135,3 +135,4 @@ http get http://localhost/api/contacts/1/phones
 ```
 
 ### Phone API
+
