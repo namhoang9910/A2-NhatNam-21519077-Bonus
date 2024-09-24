@@ -62,37 +62,43 @@ You will see the example of running the PostgreSQL inside the container.
 
 postgres=# select * from contacts;
    ```
-## Executing API
 
-### Contact API
 
-Task 1. ![Task 1 Screenshots](images/Task%201.png)
+Task 1. ![Task 1 Screenshot](images/Task1.png)
 
-1. Add contacts API  (POST)
-```bash
-http post http://localhost/api/contacts name="Choiru"
-        
-choiruzain@MacMarichoy-7 TestSystem % http post http://localhost/api/contacts name="Choiru"
-HTTP/1.1 200 OK
-Access-Control-Allow-Origin: http://localhost:3000
-Connection: keep-alive
-Content-Length: 102
-Content-Type: application/json; charset=utf-8
-Date: Thu, 08 Aug 2024 21:01:53 GMT
-ETag: W/"66-FmPYAaIkyQoroDwP2JsAZjWTAxs"
-Server: nginx/1.25.1
-Vary: Origin
-X-Powered-By: Express
+Task 2. API Commands
+2.1. Show Contact
+Command: http GET http://localhost/api/contacts
+Screenshot: ![Task 2.1 Screenshot](images/Task2.1.png)
 
-{
-"createdAt": "2024-08-08T21:01:53.017Z",
-"id": 1,
-"name": "Choiru",
-"updatedAt": "2024-08-08T21:01:53.017Z"
-}
+2.2. Add Contact   
+Command: http POST http://localhost/api/contacts name="nam"
+Screenshot: ![Task 2.2 Screenshot](images/Task2.2.png)
 
-```
-2 Get contacts API  (GET)
+2.3. Delete Contact
+Command: http DELETE http://localhost/api/contacts/3 
+Screenshot: ![Task 2.3 Screenshot](images/Task2.3.png)
+
+2.4. Update Contact
+Command: http PUT http://localhost/api/contacts/4 name="Scott Mann"
+Screenshot: ![Task 2.4 Screenshot](images/Task2.4.png)
+
+2.5. Show Phone
+Command: http GET http://localhost/api/contacts/1/phones
+Screenshot: ![Task 2.5 Screenshot](images/Task2.5.png)
+
+2.6. Add Phone
+Command: http POST http://localhost/api/contacts/1/phones name="Mobile" number="01119999"
+Screenshot: ![Task 2.6 Screenshot](images/Task2.6.png)
+
+2.7. Delete Phone
+Command: http DELETE  http://localhost/api/contacts/1/phones/6   
+Screenshot: ![Task 2.7 Screenshot](images/Task2.7.png)
+
+2.8. Update Phone
+Command: http PUT http://localhost/api/contacts/1/phones/7 number="6101119999"
+Screenshot: ![Task 2.8 Screenshot](images/Task2.8.png)
+
 
 ```bash
 http get http://localhost/api/contacts
