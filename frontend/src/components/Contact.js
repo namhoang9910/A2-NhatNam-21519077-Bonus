@@ -5,6 +5,7 @@ function Contact(props) {
     const {contact, contacts, setContacts} = props;
     const [expanded, setExpanded] = useState(false);
     const [phones, setPhones] = useState([]);
+    
 
     useEffect(() => {
         fetch('http://localhost/api/contacts/' + contact.id + '/phones')
@@ -34,18 +35,26 @@ function Contact(props) {
     }
 
 	return (
-		<div key={contact.id} className='contact' onClick={(e) => setExpanded(!expanded)}>
+        <div key={contact.id} className='contact' onClick={(e) => setExpanded(!expanded)}>
             <div className='title'>
                 <h3>{contact.name}</h3>
                 <button className='button red' onClick={doDelete}>Delete Contact</button>
             </div>
-
+    
             <div style={expandStyle}>
-                <hr />
-                <PhoneList phones={phones} setPhones={setPhones} contact={contact} />
+            <hr />
+            <div style={{ textAlign: 'center' }}>
+                <h2 style={{ fontWeight: 'bold' }}>Contact Summary:</h2>
             </div>
+            <div style={{ textAlign: 'left' }}>
+                <p style={{ fontWeight: 'bold' }}>Name: <span style={{ fontWeight: 'normal' }}>{contact.name}</span></p>
+                <p style={{ fontWeight: 'bold' }}>Address: <span style={{ fontWeight: 'normal' }}>{contact.address}</span></p>
+            </div>
+            <PhoneList phones={phones} setPhones={setPhones} contact={contact} />
         </div>
-	);
+        </div>
+    );
+    
 }
 
 export default Contact;

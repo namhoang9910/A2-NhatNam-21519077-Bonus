@@ -118,6 +118,30 @@ Command: http PUT http://localhost/api/contacts/1/phones/7 number="6101119999"
 Screenshot: ![Task 2.8 Screenshot](images/Task2.8.png)
 
 ## Task 3
+3.1. Modify the contacts Table
+
+Progres command: ALTER TABLE contacts ADD COLUMN address VARCHAR(255);
+postgres=# select * from contacts;
+ id |    name    |         createdAt          |         updatedAt          | address 
+----+------------+----------------------------+----------------------------+---------
+  1 | tony       | 2024-09-18 01:30:50.984+00 | 2024-09-18 01:30:50.984+00 | 
+  4 | Scott Mann | 2024-09-18 01:53:57.967+00 | 2024-09-18 02:01:39.607+00 | 
+
+
+3.2. Modify the phones Table
+
+Rename "name" to "phone_type" command: ALTER TABLE phones RENAME COLUMN name TO phone_type;
+
+Rename "number" to "phone_number" command: ALTER TABLE phones RENAME COLUMN number TO phone_number;
+
+postgres=# select * from phones;
+ id | phone_type | phone_number | contactId |         createdAt          |         updatedAt          
+----+------------+--------------+-----------+----------------------------+----------------------------
+  2 | Mobile     | 23456789     |         1 | 2024-09-18 01:30:58.233+00 | 2024-09-18 01:30:58.233+00
+  5 | Mobile     | 345678       |         4 | 2024-09-18 01:54:05.912+00 | 2024-09-18 01:54:05.912+00
+
+3.3. Adjust the Front-End
+
 
 ## Task 4
 
