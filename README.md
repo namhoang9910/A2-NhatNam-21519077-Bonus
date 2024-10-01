@@ -121,6 +121,7 @@ Screenshot: ![Task 2.8 Screenshot](images/Task2.8.png)
 3.1. Modify the contacts Table
 
 Progres command: ALTER TABLE contacts ADD COLUMN address VARCHAR(255);
+
 postgres=# select * from contacts;
  id |    name    |         createdAt          |         updatedAt          | address 
 ----+------------+----------------------------+----------------------------+---------
@@ -140,7 +141,59 @@ postgres=# select * from phones;
   2 | Mobile     | 23456789     |         1 | 2024-09-18 01:30:58.233+00 | 2024-09-18 01:30:58.233+00
   5 | Mobile     | 345678       |         4 | 2024-09-18 01:54:05.912+00 | 2024-09-18 01:54:05.912+00
 
+
 3.3. Adjust the Front-End
+
+Screenshot: ![Task 3.3 Screenshot](images/Task3.3.png)
+
+3.4. Test API commands
+3.4.1. Show Contact
+
+Command: http GET http://localhost/api/contacts
+
+Screenshot: ![Task 3.4.1 Screenshot](images/Task3.4.1.png)
+
+3.4.2. Add Contact   
+
+Command: http POST http://localhost/api/contacts name="Nam Hoang" address="1 Kingsbury Dr"
+
+Screenshot: ![Task 3.4.2 Screenshot](images/Task3.4.2.png)
+
+3.4.3. Delete Contact
+
+Command: http DELETE http://localhost/api/contacts/14 
+
+Screenshot: ![Task 3.4.3 Screenshot](images/Task3.4.3.png)
+
+3.4.4. Update Contact
+
+Command: http PUT http://localhost/api/contacts/13 name="Choiru Za'in" address="BUS Building 14, VIC 3086"
+
+Screenshot: ![Task 3.4.4 Screenshot](images/Task3.4.4.png)
+
+3.4.5. Show Phone
+
+Command: http GET http://localhost/api/contacts/13/phones
+
+Screenshot: ![Task 3.4.5 Screenshot](images/Task3.4.5.png)
+
+3.4.6. Add Phone
+
+Command: http POST http://localhost/api/contacts/13/phones phone_type="Mobile" phone_number="11121314"
+
+Screenshot: ![Task 3.4.6 Screenshot](images/Task3.4.6.png)
+
+3.4.7. Delete Phone
+
+Command: http DELETE  http://localhost/api/contacts/13/phones/17  
+
+Screenshot: ![Task 3.4.7 Screenshot](images/Task3.4.7.png)
+
+3.4.8. Update Phone
+
+Command: http PUT http://localhost/api/contacts/13/phones/19 phone_number="+6111121314"
+
+Screenshot: ![Task 3.4.8 Screenshot](images/Task3.4.8.png)
 
 
 ## Task 4
