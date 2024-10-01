@@ -123,10 +123,8 @@ Screenshot: ![Task 2.8 Screenshot](images/Task2.8.png)
 Progres command: ALTER TABLE contacts ADD COLUMN address VARCHAR(255);
 
 postgres=# select * from contacts;
- id |    name    |         createdAt          |         updatedAt          | address 
-----+------------+----------------------------+----------------------------+---------
-  1 | tony       | 2024-09-18 01:30:50.984+00 | 2024-09-18 01:30:50.984+00 | 
-  4 | Scott Mann | 2024-09-18 01:53:57.967+00 | 2024-09-18 02:01:39.607+00 | 
+
+Screenshot: ![Task 3.1 Screenshot](images/Task3.1.png)
 
 
 3.2. Modify the phones Table
@@ -136,10 +134,8 @@ Rename "name" to "phone_type" command: ALTER TABLE phones RENAME COLUMN name TO 
 Rename "number" to "phone_number" command: ALTER TABLE phones RENAME COLUMN number TO phone_number;
 
 postgres=# select * from phones;
- id | phone_type | phone_number | contactId |         createdAt          |         updatedAt          
-----+------------+--------------+-----------+----------------------------+----------------------------
-  2 | Mobile     | 23456789     |         1 | 2024-09-18 01:30:58.233+00 | 2024-09-18 01:30:58.233+00
-  5 | Mobile     | 345678       |         4 | 2024-09-18 01:54:05.912+00 | 2024-09-18 01:54:05.912+00
+
+Screenshot: ![Task 3.2 Screenshot](images/Task3.2.png)
 
 
 3.3. Adjust the Front-End
@@ -197,6 +193,54 @@ Screenshot: ![Task 3.4.8 Screenshot](images/Task3.4.8.png)
 
 
 ## Task 4
+
+4.1. Table creation
+
+Command:
+
+CREATE TABLE companies (
+    company_id SERIAL PRIMARY KEY,
+    company_name VARCHAR(255) NOT NULL,
+    company_address VARCHAR(255),
+    contact_id INT,
+    CONSTRAINT fk_contact
+        FOREIGN KEY (contact_id) 
+        REFERENCES contacts(id)
+);
+
+Screenshot: ![Task 3.4.5 Screenshot](images/Task3.4.5.png)
+
+4.2. API Creation
+
+4.2.1. Show Companies
+
+Command: http GET http://localhost/api/contacts
+
+Screenshot: ![Task 4.2.1 Screenshot](images/Task4.2.1.png)
+
+4.2.2. Add Companies   
+
+Command: http POST http://localhost/api/contacts name="Nam Hoang" address="1 Kingsbury Dr"
+
+Screenshot: ![Task 4.2.2 Screenshot](images/Task4.2.2.png)
+
+4.2.3. Delete Companies
+
+Command: http DELETE http://localhost/api/contacts/14 
+
+Screenshot: ![Task 4.2.3 Screenshot](images/Task4.2.3.png)
+
+4.2.4. Update Companies
+
+Command: http PUT http://localhost/api/contacts/13 name="Choiru Za'in" address="BUS Building 14, VIC 3086"
+
+Screenshot: ![Task 4.2.4 Screenshot](images/Task4.2.4.png)
+
+
+
+
+## Task 5
+
 
 ```bash
 
