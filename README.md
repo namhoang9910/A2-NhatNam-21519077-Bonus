@@ -208,31 +208,31 @@ CREATE TABLE companies (
         REFERENCES contacts(id)
 );
 
-Screenshot: ![Task 3.4.5 Screenshot](images/Task3.4.5.png)
+Screenshot: ![Task 4.1. Screenshot](images/Task4.1.png)
 
 4.2. API Creation
 
 4.2.1. Show Companies
 
-Command: http GET http://localhost/api/contacts
+Command: http GET http://localhost/api/contacts/1/companies
 
 Screenshot: ![Task 4.2.1 Screenshot](images/Task4.2.1.png)
 
 4.2.2. Add Companies   
 
-Command: http POST http://localhost/api/contacts name="Nam Hoang" address="1 Kingsbury Dr"
+Command: http POST http://localhost/api/contacts/1/companies company_name="Latrobe Uni" company_address="Kingsbury, Victoria, Australia"
 
 Screenshot: ![Task 4.2.2 Screenshot](images/Task4.2.2.png)
 
 4.2.3. Delete Companies
 
-Command: http DELETE http://localhost/api/contacts/14 
+Command: http DELETE http://localhost/api/contacts/1/companies/3
 
 Screenshot: ![Task 4.2.3 Screenshot](images/Task4.2.3.png)
 
 4.2.4. Update Companies
 
-Command: http PUT http://localhost/api/contacts/13 name="Choiru Za'in" address="BUS Building 14, VIC 3086"
+Command: http PUT http://localhost/api/contacts/1/companies/4 company_name="La Trobe University" company_address="1 Kingsbury Dr, VIC 3086, AUS"
 
 Screenshot: ![Task 4.2.4 Screenshot](images/Task4.2.4.png)
 

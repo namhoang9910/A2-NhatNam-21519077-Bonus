@@ -1,6 +1,7 @@
 const db = require("../models");
 const Contacts = db.contacts;
 const Phones = db.phones;
+const Companies = db.companies;
 const Op = db.Sequelize.Op;
 
 // Create contact
@@ -102,6 +103,23 @@ exports.delete = (req, res) => {
             res.status(500).send({
                 message: "Could not delete Contact with id=" + id
             });
+        });
+    });
+};
+
+// Get companies for a specific contact
+exports.findCompanies = (req, res) => {
+    const contactId = req.params.contactId;
+
+    Companies.findAll({
+        where: { contact_id: contactId } // Adjust to match your foreign key definition
+    })
+    .then(data => {
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving companies."
         });
     });
 };
