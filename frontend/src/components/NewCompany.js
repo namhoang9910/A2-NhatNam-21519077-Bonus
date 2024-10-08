@@ -17,13 +17,13 @@ function NewCompany(props) {
             body: JSON.stringify({
                 company_name,
                 company_address,
-                contact_id
+                contact_id: contact_id === '' ? null : contact_id
             })
         });
 
         const data = await response.json();
 
-        if (data.id) {
+        if (data.company_id) {
             setCompanies([...companies, data]);
         }
 

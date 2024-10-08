@@ -258,15 +258,25 @@ Screenshot: ![Task 5.2.1 Screenshot](images/Task5.2.1.png)
 
 Only existing contact id can be added. If the contact id doesn't exist in the contact table, no record is registered. However, if the input field is left empty (per screenshot below), the company will be registered with no contact ids.
 
-Screenshot: ![Task 5.2.2 Screenshot](images/Task5.2.1.png)
+Screenshot:
+![Task 5.2.2 Screenshot](images/Task5.2.2.png)
 
-5.2.3. 
 
-5.2.4. 
+5.2.3. Updated the UI to allow ADD feature of company records
 
-5.2.5. 
+Screenshot of "ADD" UI & database updates:
+![Task 5.2.3 Screenshot](images/Task5.2.3.png)
 
-5.2.6. 
+5.2.4. Updated the UI to allow DELETE feature of company records
+
+Screenshot of "DELETE" UI & database updates:
+![Task 5.2.3 Screenshot](images/Task5.2.3.png)
+
+5.2.5. Updated the UI to allow EDIT & UPDATE features of company records
+
+Screenshot of "EDIT & UPDATE" UI and Database updates:
+![Task 5.2.5 Screenshot](images/Task5.2.5.png)
+
 
 ```bash
 
