@@ -7,7 +7,7 @@ exports.create = (req, res) => {
     const company = {
         company_name: req.body.company_name,
         company_address: req.body.company_address,
-        contact_id: parseInt(req.params.contactId),
+        contact_id: req.body.contact_id ? parseInt(req.body.contact_id) : null,
     };
 
     Company.create(company)

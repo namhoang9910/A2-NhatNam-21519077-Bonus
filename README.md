@@ -147,7 +147,8 @@ Screenshot: ![Task 3.3 Screenshot](images/Task3.3.png)
 
 Command: http GET http://localhost/api/contacts
 
-Screenshot: ![Task 3.4.1 Screenshot](images/Task3.4.1.png)
+Screenshot: 
+![Task 3.4.1 Screenshot](images/Task3.4.1.png)
 
 3.4.2. Add Contact   
 
@@ -214,25 +215,25 @@ Screenshot: ![Task 4.1. Screenshot](images/Task4.1.png)
 
 4.2.1. Show Companies
 
-Command: http GET http://localhost/api/contacts/1/companies
+Command: http GET http://localhost/api/companies
 
 Screenshot: ![Task 4.2.1 Screenshot](images/Task4.2.1.png)
 
 4.2.2. Add Companies   
 
-Command: http POST http://localhost/api/contacts/1/companies company_name="Latrobe Uni" company_address="Kingsbury, Victoria, Australia"
+Command: http POST http://localhost/api/companies company_name="La Trobe University" company_address="Bundoora VIC"
 
 Screenshot: ![Task 4.2.2 Screenshot](images/Task4.2.2.png)
 
 4.2.3. Delete Companies
 
-Command: http DELETE http://localhost/api/contacts/1/companies/3
+Command: http DELETE http://localhost/api/companies/2
 
 Screenshot: ![Task 4.2.3 Screenshot](images/Task4.2.3.png)
 
 4.2.4. Update Companies
 
-Command: http PUT http://localhost/api/contacts/1/companies/4 company_name="La Trobe University" company_address="1 Kingsbury Dr, VIC 3086, AUS"
+Command: http PUT http://localhost/api/companies/1 company_name="Melbourne University" company_address="1 Parkville VIC 3052, AUS"
 
 Screenshot: ![Task 4.2.4 Screenshot](images/Task4.2.4.png)
 
@@ -249,7 +250,7 @@ Screenshot: ![Task 4.2.4 Screenshot](images/Task4.2.4.png)
 
 5.2.1. Update delete function for Contact & Company
 
-So that a contact with an id in the company table can be deleted and its foreign key is removed accordingly.
+So that as a contact gets deleted in the contact table, its foreign key in the company table can be deleted as well.
 
 Screenshot: ![Task 5.2.1 Screenshot](images/Task5.2.1.png)
 

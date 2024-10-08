@@ -35,7 +35,7 @@ function App() {
             <p>Click a contact to view associated phone numbers</p>
             <Stats />
             <h2>Company Book</h2> 
-            <CompanyList companies={companies} setCompanies={setCompanies} /> {/* Render CompanyList */}
+            <CompanyList companies={companies} setCompanies={setCompanies} /> 
         </div>
     );
 }

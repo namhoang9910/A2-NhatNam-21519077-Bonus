@@ -13,12 +13,14 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING
         },
         contact_id: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.INTEGER,  
             references: {
-                model: 'contacts', 
-                key: 'id' 
-            }
-        }
+                model: 'contacts',  
+                key: 'id'           
+            },
+            onUpdate: 'CASCADE',   
+            onDelete: 'SET NULL'    
+        }        
     });
 
     return Company;
