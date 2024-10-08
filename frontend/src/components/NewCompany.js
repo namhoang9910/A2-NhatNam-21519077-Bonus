@@ -2,8 +2,9 @@ import { useState } from 'react';
 
 function NewCompany(props) {
     const { companies, setCompanies } = props;
-    const [name, setName] = useState('');
-    const [address, setAddress] = useState('');
+    const [company_name, setCompanyName] = useState('');
+    const [company_address, setCompanyAddress] = useState('');
+    const [contact_id, setContactId] = useState('');
 
     async function createCompany(e) {
         e.preventDefault();
@@ -14,8 +15,9 @@ function NewCompany(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name,
-                address
+                company_name,
+                company_address,
+                contact_id
             })
         });
 
@@ -25,8 +27,9 @@ function NewCompany(props) {
             setCompanies([...companies, data]);
         }
 
-        setName('');
-        setAddress('');
+        setCompanyName('');
+        setCompanyAddress('');
+        setContactId('');
     }
 
     return (
@@ -43,8 +46,8 @@ function NewCompany(props) {
                 <input 
                     type='text' 
                     placeholder='Enter Company Name' 
-                    onChange={(e) => setName(e.target.value)} 
-                    value={name} 
+                    onChange={(e) => setCompanyName(e.target.value)} 
+                    value={company_name} 
                     style={{ 
                         width: '100%', 
                         borderRadius: '10px', 
@@ -66,8 +69,31 @@ function NewCompany(props) {
                 <input 
                     type='text' 
                     placeholder='Enter Company Address' 
-                    onChange={(e) => setAddress(e.target.value)} 
-                    value={address} 
+                    onChange={(e) => setCompanyAddress(e.target.value)} 
+                    value={company_address} 
+                    style={{ 
+                        width: '100%', 
+                        borderRadius: '10px', 
+                        padding: '10px', 
+                        border: '1px solid #ccc', 
+                        fontSize: '15px' 
+                    }} 
+                />
+            </div>
+            <div style={{ marginBottom: '20px' }}>
+                <label style={{ 
+                    display: 'block', 
+                    marginBottom: '5px', 
+                    textAlign: 'left',
+                    fontSize: '15px' 
+                }}>
+                    Contact id:
+                </label>
+                <input 
+                    type='text' 
+                    placeholder='Enter Company Address' 
+                    onChange={(e) => setContactId(e.target.value)} 
+                    value={contact_id} 
                     style={{ 
                         width: '100%', 
                         borderRadius: '10px', 

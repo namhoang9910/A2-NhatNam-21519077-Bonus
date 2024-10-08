@@ -11,7 +11,7 @@ function Company(props) {
     async function doDelete(e) {
         e.stopPropagation();
         
-        await fetch(`http://localhost/api/companies/${company.id}`, {
+        await fetch(`http://localhost/api/companies?id=${contact.id}`, {
             method: 'DELETE',
         });
 
@@ -20,7 +20,7 @@ function Company(props) {
     }
 
     return (
-        <div key={company.id} className='company' onClick={() => setExpanded(!expanded)}>
+        <div key={company.company_id} className='company' onClick={() => setExpanded(!expanded)}>
             <div className='title'>
                 <h3>{company.name}</h3>
                 <button className='button red' onClick={doDelete}>Delete Company</button>
@@ -29,8 +29,9 @@ function Company(props) {
             <div style={expandStyle}>
                 <hr />
                 <div style={{ textAlign: 'left' }}>
-                    <p style={{ fontWeight: 'bold' }}>Name: <span style={{ fontWeight: 'normal' }}>{company.name}</span></p>
-                    <p style={{ fontWeight: 'bold' }}>Address: <span style={{ fontWeight: 'normal' }}>{company.address}</span></p>
+                    <p style={{ fontWeight: 'bold' }}>Company Name: <span style={{ fontWeight: 'normal' }}>{company.name}</span></p>
+                    <p style={{ fontWeight: 'bold' }}>Company Address: <span style={{ fontWeight: 'normal' }}>{company.address}</span></p>
+                    <p style={{ fontWeight: 'bold' }}>Contact_id: <span style={{ fontWeight: 'normal' }}>{company.contact_id}</span></p>
                 </div>
             </div>
         </div>
