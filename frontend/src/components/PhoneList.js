@@ -11,9 +11,9 @@ function PhoneList(props) {
             <table onClick={(e) => e.stopPropagation()}>
                 <thead>
                     <tr>
-                        <th>Phone Type</th>
-                        <th>Number</th>
-                        <th>Modification Update or Delete</th>
+                        <th style={{ fontSize: '13px' }}>Phone Type</th>
+                        <th style={{ fontSize: '13px' }}>Number</th>
+                        <th style={{ fontSize: '13px' }}>Modification Update or Delete</th>
                     </tr>
                 </thead>
                 <tbody>

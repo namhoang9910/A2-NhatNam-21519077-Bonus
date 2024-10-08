@@ -30,6 +30,21 @@ require("./routes/phones.routes")(app);
 require("./routes/stats.routes")(app);
 require("./routes/companies.routes")(app);
 
+// Update companies table when removing contact_id
+app.patch('/api/companies', async (req, res) => {
+  const contactId = req.query.id;
+  try {
+      await db.companies.update(
+          { contact_id: null },  
+          { where: { contact_id: contactId } }  
+      );
+      res.status(204).send();
+  } catch (error) {
+      console.error('Error updating companies:', error);
+      res.status(500).json({ message: 'Could not update companies' });
+  }
+});
+
 // set port, listen for requests
 const PORT = 5000;
 app.listen(PORT, () => {

@@ -32,8 +32,8 @@ To find out the container ID, execute the following command:
 Once you have the container ID, you can execute the container using the following command:
 You will see the example of running the PostgreSQL inside the container.
    ```bash
-   docker exec -it b007ff94e66f psql -U postgres
-   namhoang9910@Nams-MacBook-21 A2-NhatNam-21519077 % docker exec -it b007ff94e66f psql -U postgres                                       
+   docker exec -it 753bb476dca6 psql -U postgres
+   namhoang9910@Nams-MacBook-21 A2-NhatNam-21519077 % docker exec -it 753bb476dca6 psql -U postgres                                       
    psql (15.3)
    Type "help" for help.
    
@@ -237,10 +237,25 @@ Command: http PUT http://localhost/api/contacts/1/companies/4 company_name="La T
 Screenshot: ![Task 4.2.4 Screenshot](images/Task4.2.4.png)
 
 
-
-
 ## Task 5
 
+5.1. Created 3 new js files to manage the UI for companies under src/components/
+
+- Company.js
+- CompanyList.js
+- NewCompany.js
+
+5.2. Updated App.js to display companies
+
+5.2.1. Update delete function for Contact & Company
+
+So that a contact with an id in the company table can be deleted and its foreign key is removed accordingly.
+
+Screenshot: ![Task 5.2.1 Screenshot](images/Task5.2.1.png)
+
+5.2.2. 
+
+5.2.3. 
 
 ```bash
 
