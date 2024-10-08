@@ -15,7 +15,7 @@ function CompanyList(props) {
             {
                 companies.map((company) => {
                     return (
-                        <Company key={company.id} company={company} companies={companies} setCompanies={setCompanies} />
+                        <Company key={company.company_id} company={company} companies={companies} setCompanies={setCompanies} />
                     );
                 })
             }

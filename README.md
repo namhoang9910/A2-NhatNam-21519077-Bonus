@@ -248,15 +248,25 @@ Screenshot: ![Task 4.2.4 Screenshot](images/Task4.2.4.png)
 
 5.2. Updated App.js to display companies
 
-5.2.1. Update delete function for Contact & Company
+5.2.1. Updated delete function for Contact & Company
 
 So that as a contact gets deleted in the contact table, its foreign key in the company table can be deleted as well.
 
 Screenshot: ![Task 5.2.1 Screenshot](images/Task5.2.1.png)
 
-5.2.2. 
+5.2.2. Updated UI element to add contact id to company book
+
+Only existing contact id can be added. If the contact id doesn't exist in the contact table, no record is registered. However, if the input field is left empty (per screenshot below), the company will be registered with no contact ids.
+
+Screenshot: ![Task 5.2.2 Screenshot](images/Task5.2.1.png)
 
 5.2.3. 
+
+5.2.4. 
+
+5.2.5. 
+
+5.2.6. 
 
 ```bash
 
