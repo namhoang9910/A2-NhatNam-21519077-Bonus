@@ -4,6 +4,7 @@ IMPORTANT: Once you've cloned this to your forked repository, ensure that you co
 
 Please include your shared repository link here:
 
+**(BONUS TASK AT THE BOTTOM)**
 NHAT NAM HOANG (21519077)'S REPOSITORY:
 https://github.com/namhoang9910/A2-NhatNam-21519077.git 
 
@@ -277,6 +278,15 @@ Screenshot of "DELETE" UI & database updates:
 Screenshot of "EDIT & UPDATE" UI and Database updates:
 ![Task 5.2.5 Screenshot](images/Task5.2.5.png)
 
+
+## Task 6 - BONUS
+
+6.1. Created 3 new tables: items, customers, orders
+
+Screenshot:
+![Task 6.1 Screenshot](images/Task6.1.png)
+
+6.2.
 
 ```bash
 

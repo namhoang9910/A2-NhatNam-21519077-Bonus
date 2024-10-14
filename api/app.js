@@ -29,6 +29,9 @@ require("./routes/contacts.routes")(app);
 require("./routes/phones.routes")(app);
 require("./routes/stats.routes")(app);
 require("./routes/companies.routes")(app);
+require("./routes/items.routes")(app);
+require("./routes/customers.routes")(app);
+require("./routes/orders.routes")(app);
 
 // Update companies table when removing contact_id
 app.patch('/api/companies', async (req, res) => {
