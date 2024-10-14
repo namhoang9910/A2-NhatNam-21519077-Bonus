@@ -33,8 +33,8 @@ To find out the container ID, execute the following command:
 Once you have the container ID, you can execute the container using the following command:
 You will see the example of running the PostgreSQL inside the container.
    ```bash
-   docker exec -it 753bb476dca6 psql -U postgres
-   namhoang9910@Nams-MacBook-21 A2-NhatNam-21519077 % docker exec -it 753bb476dca6 psql -U postgres                                       
+   docker exec -it 47a61831b0e2 psql -U postgres
+   namhoang9910@Nams-MacBook-21 A2-NhatNam-21519077 % docker exec -it 47a61831b0e2 psql -U postgres                                       
    psql (15.3)
    Type "help" for help.
    
@@ -284,7 +284,46 @@ Screenshot of "EDIT & UPDATE" UI and Database updates:
 6.1. Created 3 new tables: items, customers, orders
 
 Screenshot:
-![Task 6.1 Screenshot](images/Task6.1.png)
+![Task 6.1.1 Screenshot](images/Task6.1.1.png.png)
+
+
+CREATE TABLE items (
+    item_id SERIAL PRIMARY KEY,
+    item_name VARCHAR(255) NOT NULL,
+    item_price DECIMAL(10, 2) NOT NULL
+);
+
+Screenshot:
+![Task 6.1.2 Screenshot](images/Task6.1.2.png)
+
+
+CREATE TABLE customers (
+    customer_id SERIAL PRIMARY KEY,
+    customer_name VARCHAR(255) NOT NULL,
+    customer_email VARCHAR(255) UNIQUE NOT NULL
+);
+
+Screenshot:
+![Task 6.1.3 Screenshot](images/Task6.1.3.png)
+
+
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    customer_id INT NOT NULL,
+    item_id INT NOT NULL,
+    CONSTRAINT fk_customer
+        FOREIGN KEY (customer_id) 
+        REFERENCES customers(customer_id)
+        ON DELETE CASCADE,
+    CONSTRAINT fk_item
+        FOREIGN KEY (item_id) 
+        REFERENCES items(item_id)
+        ON DELETE CASCADE
+);
+
+Screenshot:
+![Task 6.1.4 Screenshot](images/Task6.1.4.png)
 
 6.2.
 
