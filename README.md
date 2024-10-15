@@ -6,7 +6,7 @@ Please include your shared repository link here:
 
 **(BONUS TASK AT THE BOTTOM)**
 NHAT NAM HOANG (21519077)'S REPOSITORY:
-https://github.com/namhoang9910/A2-NhatNam-21519077.git 
+https://github.com/namhoang9910/A2-NhatNam-21519077-Bonus.git 
 
 ## Access Database
 1 **Plsql Cheat Sheet:**
@@ -20,7 +20,7 @@ To find out the container ID, execute the following command:
       42b57d821b3b   a2-nhatnam-21519077-nginx      "/docker-entrypoint.…"   6 days ago   Up 19 minutes   0.0.0.0:80->80/tcp   a2-nhatnam-21519077-nginx-1
       9b8fff3011e4   a2-nhatnam-21519077-frontend   "docker-entrypoint.s…"   6 days ago   Up 19 minutes   3000/tcp             a2-nhatnam-21519077-frontend-1
       5946c5c790b7   a2-nhatnam-21519077-api        "docker-entrypoint.s…"   6 days ago   Up 19 minutes   5000/tcp             a2-nhatnam-21519077-api-1
-      b007ff94e66f   postgres:15.3-alpine3.18       "docker-entrypoint.s…"   6 days ago   Up 19 minutes   5432/tcp             a2-nhatnam-21519077-db-1
+      47a61831b0e2   postgres:15.3-alpine3.18       "docker-entrypoint.s…"   6 days ago   Up 19 minutes   5432/tcp             a2-nhatnam-21519077-db-1
    ```
 3. Running the application
 
@@ -284,7 +284,7 @@ Screenshot of "EDIT & UPDATE" UI and Database updates:
 6.1. Created 3 new tables: items, customers, orders
 
 Screenshot:
-![Task 6.1.1 Screenshot](images/Task6.1.1.png.png)
+![Task 6.1.1 Screenshot](images/Task6.1.1.png)
 
 
 CREATE TABLE items (
@@ -325,7 +325,108 @@ CREATE TABLE orders (
 Screenshot:
 ![Task 6.1.4 Screenshot](images/Task6.1.4.png)
 
-6.2.
+6.2. Test API commands
+6.2.1. Show Item
+
+Command: http GET http://localhost/api/items
+This command shows all items in the items table.
+
+Screenshot: 
+![Task 6.2.1 Screenshot](images/Task6.2.1.png)
+
+6.2.2. Add Item   
+
+Command: http POST http://localhost/api/items item_name="Candy Bar" item_price="100"
+This command adds a new item with name and price.
+
+Screenshot: 
+![Task 6.2.2 Screenshot](images/Task6.2.2.png)
+
+6.2.3. Delete Item
+
+Command: http DELETE http://localhost/api/items/1
+This command delete an item based on its id.
+
+Screenshot: 
+![Task 6.2.3 Screenshot](images/Task6.2.3.png)
+
+6.2.4. Update Item
+
+Command: http PUT http://localhost/api/items/1 item_name="Chocolate Candy Bar" item_price="250"
+This command updates an item based on its id.
+
+Screenshot: 
+![Task 6.2.4 Screenshot](images/Task6.2.4.png)
+
+6.2.5. Show Customer
+
+Command: http GET http://localhost/api/customers
+This command shows all customers in the customers table.
+
+Screenshot: 
+![Task 6.2.5 Screenshot](images/Task6.2.5.png)
+
+6.2.6. Add Customer  
+
+Command: http POST http://localhost/api/customers customer_name="Person A" customer_email="personA@gmail.com"
+This command adds a new customer with name and email.
+
+Screenshot: 
+![Task 6.2.6 Screenshot](images/Task6.2.6.png)
+
+6.2.7. Delete Customer
+
+Command: http DELETE http://localhost/api/customers/1
+This command delete a customer based on their id.
+
+Screenshot: 
+![Task 6.2.7 Screenshot](images/Task6.2.7.png)
+
+6.2.8. Update Customer
+
+Command: http PUT http://localhost/api/customers/1 customer_name="Person A Updated Name" customer_email="personAUpdatedName@gmail.com"
+This command updates a customer based on their id.
+
+Screenshot: 
+![Task 6.2.8 Screenshot](images/Task6.2.8.png)
+
+6.2.9. Show Order
+
+Command: http GET http://localhost/api/orders
+This command shows all orders in the orders table.
+
+Screenshot: 
+![Task 6.2.9 Screenshot](images/Task6.2.9.png)
+
+6.2.10. Add Order  
+
+Command: http POST http://localhost/api/orders customer_id="2" item_id="2"
+This command adds a new order with customer id and item id.
+
+Screenshot: 
+![Task 6.2.10 Screenshot](images/Task6.2.10.png)
+
+6.2.11. Delete Order
+
+Command: http DELETE http://localhost/api/orders/1
+This command delete an order based on its id.
+
+Screenshot: 
+![Task 6.2.11 Screenshot](images/Task6.2.11.png)
+
+6.2.12. Update Order
+
+Command: http PUT http://localhost/api/orders/1 item_id="3"
+This command updates an order based on its id.
+
+Screenshot: 
+![Task 6.2.12 Screenshot](images/Task6.2.12.png)
+
+
+
+
+
+
 
 ```bash
 
