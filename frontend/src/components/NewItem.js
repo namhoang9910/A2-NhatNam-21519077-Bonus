@@ -35,6 +35,7 @@ function NewItem(props) {
                 <label>Item Name:</label>
                 <input 
                     type='text' 
+                    placeholder='Enter Item Name' 
                     value={item_name} 
                     onChange={(e) => setItemName(e.target.value)} 
                 />
@@ -43,6 +44,7 @@ function NewItem(props) {
                 <label>Item Price:</label>
                 <input 
                     type='number' 
+                    placeholder='Enter Price' 
                     step='0.01' 
                     value={item_price} 
                     onChange={(e) => setItemPrice(e.target.value)} 
