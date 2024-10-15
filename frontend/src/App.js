@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';  // import useEffect
 import ContactList from './components/ContactList';
 import CompanyList from './components/CompanyList';
+import ItemList from './components/ItemList';
 import Stats from './components/Stats';
 import './App.css';
 
 function App() {
     const [contacts, setContacts] = useState([]);
     const [companies, setCompanies] = useState([]);  
+    const [items, setItems] = useState([]);  
 
     // Fetch contacts
     useEffect(() => {
@@ -28,6 +30,16 @@ function App() {
             });
     }, []);
 
+    // Fetch items
+    useEffect(() => {
+        fetch('http://localhost/api/items')  
+            .then(response => response.json())
+            .then(data => setItems(data))
+            .catch((error) => {
+                console.error('Error fetching items:', error);
+            });
+    }, []);
+
     return (
         <div className='page'>
             <h1>Contactor Book</h1>
@@ -36,6 +48,8 @@ function App() {
             <Stats />
             <h1>Company Book</h1> 
             <CompanyList companies={companies} setCompanies={setCompanies} /> 
+            <h1>Item Book</h1> 
+            <ItemList items={items} setItems={setItems} />
         </div>
     );
 }

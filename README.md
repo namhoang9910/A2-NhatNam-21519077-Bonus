@@ -326,6 +326,7 @@ Screenshot:
 ![Task 6.1.4 Screenshot](images/Task6.1.4.png)
 
 6.2. Test API commands
+
 6.2.1. Show Item
 
 Command: http GET http://localhost/api/items
@@ -423,8 +424,19 @@ Screenshot:
 ![Task 6.2.12 Screenshot](images/Task6.2.12.png)
 
 
+6.3. UI Updates
+
+6.3.1. UI for Items
+
+3 new frontend files: NewItem.js, Item.js, ItemList.js
+
+Screenshot: 
+![Task 6.3.1 Screenshot](images/Task6.3.1.png)
+
+6.3.2. UI for Customers
 
 
+6.3.3. UI for Orders
 
 
 
