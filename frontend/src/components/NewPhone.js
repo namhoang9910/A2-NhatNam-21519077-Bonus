@@ -79,7 +79,7 @@ function NewPhone(props) {
                         borderRadius: '10px' 
                     }} 
                 >
-                    Add to<br />Phonebook
+                    Add to {contact.name}'s<br />Phonebook
                 </button>
             </div>
         </form>
