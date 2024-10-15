@@ -20,7 +20,7 @@ To find out the container ID, execute the following command:
       42b57d821b3b   a2-nhatnam-21519077-nginx      "/docker-entrypoint.…"   6 days ago   Up 19 minutes   0.0.0.0:80->80/tcp   a2-nhatnam-21519077-nginx-1
       9b8fff3011e4   a2-nhatnam-21519077-frontend   "docker-entrypoint.s…"   6 days ago   Up 19 minutes   3000/tcp             a2-nhatnam-21519077-frontend-1
       5946c5c790b7   a2-nhatnam-21519077-api        "docker-entrypoint.s…"   6 days ago   Up 19 minutes   5000/tcp             a2-nhatnam-21519077-api-1
-      47a61831b0e2   postgres:15.3-alpine3.18       "docker-entrypoint.s…"   6 days ago   Up 19 minutes   5432/tcp             a2-nhatnam-21519077-db-1
+      5b3e873e35d9   postgres:15.3-alpine3.18       "docker-entrypoint.s…"   6 days ago   Up 19 minutes   5432/tcp             a2-nhatnam-21519077-db-1
    ```
 3. Running the application
 
@@ -33,8 +33,8 @@ To find out the container ID, execute the following command:
 Once you have the container ID, you can execute the container using the following command:
 You will see the example of running the PostgreSQL inside the container.
    ```bash
-   docker exec -it 47a61831b0e2 psql -U postgres
-   namhoang9910@Nams-MacBook-21 A2-NhatNam-21519077 % docker exec -it 47a61831b0e2 psql -U postgres                                       
+   docker exec -it 5b3e873e35d9 psql -U postgres
+   namhoang9910@Nams-MacBook-21 A2-NhatNam-21519077 % docker exec -it 5b3e873e35d9 psql -U postgres                                       
    psql (15.3)
    Type "help" for help.
    
@@ -433,11 +433,24 @@ Screenshot:
 Screenshot: 
 ![Task 6.3.1 Screenshot](images/Task6.3.1.png)
 
-6.3.2. UI for Customers
+6.3.2. UI for Customers + UPDATE
 
+3 new frontend files: NewCustomer.js, Customer.js, CustomerList.js
+
+Screenshot: 
+![Task 6.3.2.1 Screenshot](images/Task6.3.2.1.png)
+
+UPDATE customer's data
+
+Screenshot: 
+![Task 6.3.2.2 Screenshot](images/Task6.3.2.2.png)
 
 6.3.3. UI for Orders
 
+3 new frontend files: NewOrder.js, Order.js, OrderList.js
+
+Screenshot: 
+![Task 6.3.3 Screenshot](images/Task6.3.3.png)
 
 
 ```bash

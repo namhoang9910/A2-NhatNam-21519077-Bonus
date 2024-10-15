@@ -52,15 +52,6 @@ function NewCustomer(props) {
                     value={customer_email}
                 />
             </div>
-            <div style={{ marginBottom: '20px' }}>
-                <label>Customer Phone:</label>
-                <input 
-                    type='text' 
-                    placeholder='Enter Customer Phone' 
-                    onChange={(e) => setCustomerPhone(e.target.value)} 
-                    value={customer_phone}
-                />
-            </div>
             <button type='submit'>Create Customer</button>
         </form>
     );

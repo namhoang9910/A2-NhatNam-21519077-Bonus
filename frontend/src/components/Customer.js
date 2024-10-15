@@ -89,21 +89,12 @@ function Customer(props) {
                                 onChange={(e) => setCustomerEmail(e.target.value)} 
                             />
                         </div>
-                        <div style={{ marginBottom: '20px' }}>
-                            <label>Customer Phone:</label>
-                            <input 
-                                type='text' 
-                                value={customerPhone} 
-                                onChange={(e) => setCustomerPhone(e.target.value)} 
-                            />
-                        </div>
                         <button type='submit'>Save Changes</button>
                     </form>
                 ) : (
                     <div>
                         <p>Customer Name: {customer.customer_name}</p>
                         <p>Customer Email: {customer.customer_email}</p>
-                        <p>Customer Phone: {customer.customer_phone}</p>
                     </div>
                 )}
 
